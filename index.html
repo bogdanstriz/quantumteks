@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -10,8 +9,15 @@
 	<meta name="keywords"  content="fullpage,jquery,alvaro,trigo,plugin,fullscren,screen,full,iphone5,apple,pure,javascript,slider,hijacking" />
 	<meta name="Resource-type" content="Document" />
 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-	<link rel="stylesheet" type="text/css" href="css/javascript.fullPage.css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Faster One' rel='stylesheet'>
+
+
+	<link rel="stylesheet" type="text/css" href="javascript.fullPage.css" />
 
 	<style>
 		/* Reset CSS
@@ -79,10 +85,71 @@
 			text-align: center;
 		}
 
+		/* Top navbar
+		 * --------------------------------------- */
+
+
+		 /* Navigation Bar at the top of the screen, it doesn't move when you scroll down */
+#topnavbarfixed {
+  overflow: hidden;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+  border-bottom: 5px solid;
+  border-color: #800000;
+  opacity: .88;
+}
+.btn {
+  background-color: #800000;
+  color: white;
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+  border-radius: 0px;
+}
+.btn-success{
+  background-color: #800000;
+  color: white;
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+  border-radius: 1px;
+  border-color: #800000;
+}
+
+#topbtn1:hover {
+  background-color: transparent;
+  color: black;
+  border-color: black
+}
+#topbtn2:hover {
+  background-color: transparent;
+  color: black;
+  border-color: black
+}
+#topbtn3:hover {
+  background-color: transparent;
+  color: black;
+  border-color: black
+}
+#topbtn4:hover {
+  background-color: transparent;
+  color: black;
+  border-color: black
+}
+#topbtn5:hover {
+
+  color: white;
+  border-color: #800000
+}
+
 		/* Section 1
 		 * --------------------------------------- */
 		#section0{
-			background-color: #BFDA00;
+			background-image: url(img/truck-sunset.jpg);
+			background-size: cover;
 		}
 		#section0 h1{
 			color: #444;
@@ -96,7 +163,8 @@
 		/* Section 2
 		 * --------------------------------------- */
 		#section1{
-			background-color: #2EBE21;
+			background-image: url(img/28583065_xl.jpg);
+			background-size: cover;
 		}
 		#section1 h1{
 			color: #fff;
@@ -109,7 +177,8 @@
 		/* Section 3
 		 * --------------------------------------- */
 		#section2{
-			background-color: #2C3E50;
+			background-image: url(img/38429689_xl.jpg);
+			background-size: cover;
 		}
 		#section2 h1{
 			color: #F2F2F2;
@@ -120,6 +189,42 @@
 	</style>
 </head>
 <body>
+
+<!-- Top Navigation Bar -->
+
+  <div class= "row mx-auto" id= "topnavbarfixed">
+    <div class= "mx-auto" style= "height: 20px; width: 100%"></div>
+    <div class="col-md-2 mx-auto">  
+      <img class= "mx-auto img-fluid"  style= "width: 80%; margin-top: 0px" src="img/rcl-logo.jpg" alt= "RCL Logo">
+      <div class= "mx-auto" style= "height: 20px; width: 100%"></div>
+    </div>
+    <div class="col-md-2 text-center">
+      <div class= "mx-auto" style= "height: 5px; width: 100%"></div>
+      <h5 style="font-family: verdana; float: left; font-style: italic;">On Time<br>Every Time!</h5>
+      <div class= "mx-auto" style= "height: 20px; width: 100%"></div>
+    </div>
+    <div class="col-md-7">
+      <div class= "mx-auto" style= "height: 20px; width: 100%"></div>
+      <div class="btn-group btn-group-justified" style="width: 100%">
+          <a href= "#slide1"  id="topbtn1" class="btn">About us</button></a>
+         
+      
+          <a href= "#slide2"   id="topbtn2" class="btn" >Our Mission</button></a>
+  
+
+          <a href= "#bm" id="topbtn3" class="btn">Track a Shipment</button></a>
+        
+       
+     
+          <a href= "#bc" id="topbtn4" class="btn">Contact us</button></a>
+
+          <a href= "#" id="topbtn5" class="btn btn-success">Login</button></a>
+      </div>
+    </div>
+
+  </div>
+
+<!-- End Navigation Bar -->
 
 
 <div id="fullpage">
@@ -160,7 +265,7 @@
 	</div>
 </div>
 
-<script type="text/javascript" src="css/javascript.fullPage.js"></script>
+<script type="text/javascript" src="javascript.fullPage.js"></script>
 <script type="text/javascript">
 	fullpage.initialize('#fullpage', {
 		anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
