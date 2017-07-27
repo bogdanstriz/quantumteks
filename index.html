@@ -259,6 +259,18 @@
 
 		/* Slide 1
 		 * --------------------------------------- */
+		#trackingbox1 {
+			  background-color: rgba(128,0,0,.85);
+			  border: 3px solid;
+			  border-radius: 20px;
+			  border-color: #eee;
+			  margin-top: 50px;
+			  font-size: 1em;
+			  padding-right: 5%;
+			  padding-left: 5%;
+			  width: 30%; 
+			  color: white;
+			}		 
 
 
 	    /* Slide 2
@@ -459,7 +471,7 @@ span.psw {
 	<div class="section " id="section0">
 		<div class="content">
 			<h1>RCL Express LLC</h1>
-			<p>Javascript only version</p>
+			<p>On time, Every time!</p>
 		</div>
 	</div>
 
@@ -513,7 +525,78 @@ span.psw {
 	<div class="section" id="section2">
 		<div class="slide" id="slide3">
 			<div class="content">
-				<h1>More slides!</h1>
+								          <!-- --------------- Tracking Box ---------------------------- -->
+
+          <div class="mx-auto" id="trackingbox1">
+          <div>
+            <h5 class="mx-auto text-center" style="margin-top: 20px; color: white;"><b>Get a Quote</b></h5>
+
+
+
+
+            </div>
+            <!-- ------------ the rest of the tracking part /emails etc. ----------------- -->
+
+            <div class="mx-auto text-center" style="margin-top: 35px">
+            <h6 class="mx-auto text-center" style="color: white;">Please enter the following information</h6>
+
+
+
+
+            <!-- -------- FORM ------- --> 
+
+
+            <form method="post" action="https://formspree.io/dispatch@rl-exp.com" autocomplete="on"> <!-- Sends form to formspree.io which then sends it to operations@rl-exp.com -->
+
+            <div style="margin-top: 10px">
+            <small class="text-center">Company Name</small>
+            <div>
+            <input type="text" name="Company Name:" placeholder="Required*" required>
+            </div>
+            </div>           
+            <div class="mx-auto" style="margin-top: 20px">
+            <small class="text-center" >From (City, State, ZIP)</small>
+            <div>
+            <input type="text" name="From:" placeholder="Required*" required>
+            </div>
+            </div>
+            <div style="margin-top: 10px">
+            <small class="text-center">To (City, State, ZIP)</small>
+            <div>
+            <input type="text" name="To:" placeholder="Required*" required>
+            </div>
+            </div>
+            <div style="margin-top: 10px">
+            <small class="text-center">Your e-mail</small>
+            <div>
+            <input type="email" class="mx-auto" style="width: 100%" name="Email:" placeholder="Required*" required>
+            </div>
+            </div>
+            <div style="margin-top: 10px">
+            <small class="text-center">Additional Info</small>
+            <div>
+            <textarea class="mx-auto" style="width: 100%" name="Questions or Comments:" placeholder="Dims, Weight, Type of freight etc."></textarea>
+            </div>
+            </div>
+
+            <!-- Hidden inputs for subject and honeypot -->
+           
+            <input type="hidden" name="_subject" value="!!!WEBSITE QUOTE REQUEST!!!">
+            <input type="text" name="_gotcha" style="display: none;">
+
+            <!-- End hidden inputs -->
+
+
+            <div class="mx-auto" style="margin-top: 25px; margin-bottom: 25px;">
+              <button type="submit" onclick="Your request has been submited" name=" Submit" value="Track" style="border-radius: 5px">Track</button>
+            </div>
+            </form>
+              
+            </div>
+          
+          </div>
+<!-- End -->
+
 			</div>
 		</div>
 
@@ -583,19 +666,16 @@ span.psw {
 
 
             <div class="mx-auto" style="margin-top: 25px; margin-bottom: 25px;">
-              <button type="submit" onclick="Your request has been submited" name=" Submit" value="Track" style="border-radius: 5px">Track</button>
+              <button type="submit" onclick="Your request has been submited" name=" Submit" value="Quote" style="border-radius: 5px">Track</button>
             </div>
             </form>
               
             </div>
           
           </div>
-
- 
-
-
-
 <!-- End -->
+
+
 			</div>
 		</div>
 
@@ -609,7 +689,7 @@ span.psw {
 </div>
 <!-- Start login form -->
 
-<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+
 
 <div id="id01" class="modal mx-auto">
   
