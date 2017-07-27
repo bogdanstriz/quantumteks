@@ -15,6 +15,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 <link href='https://fonts.googleapis.com/css?family=Faster One' rel='stylesheet'>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 
 	<link rel="stylesheet" type="text/css" href="javascript.fullPage.css" />
@@ -90,8 +91,20 @@
 
 
 		 /* Navigation Bar at the top of the screen, it doesn't move when you scroll down */
+		 .dropdown-menu {
+		 	z-index: 100000;
+		 }
+		 .dlistw {
+		 	color: #800;
+		 }
+		 .dlistw:hover {
+		 	color: white;
+		 }
+		 .dlist:hover {
+		 	background-color: lightgrey;
+		 }
+
 #topnavbarfixed {
-  overflow: hidden;
   background-color: white;
   position: fixed;
   top: 0;
@@ -109,6 +122,14 @@
   width: 100%;
   border-radius: 0px;
 }
+.dropdown {
+  background-color: #800000;
+  color: white;
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+  border-radius: 0px;
+}
 .btn-success{
   background-color: #800000;
   color: white;
@@ -117,6 +138,12 @@
   width: 100%;
   border-radius: 1px;
   border-color: #800000;
+}
+
+.dropdown:hover {
+  background-color: transparent;
+  color: black;
+  border-color: black
 }
 
 #topbtn1:hover {
@@ -150,6 +177,7 @@
 		#section0{
 			background-image: url(img/truck-sunset.jpg);
 			background-size: cover;
+			z-index: 1;
 		}
 		#section0 h1{
 			color: #444;
@@ -165,6 +193,7 @@
 		#section1{
 			background-image: url(img/28583065_xl.jpg);
 			background-size: cover;
+			z-index: 1;
 		}
 		#section1 h1{
 			color: white;
@@ -176,19 +205,6 @@
 
 		/* Slide 1
 		 * --------------------------------------- */
-		 #aboutusheader {
-			  background-color: rgba(128,0,0,.85);
-			  padding-top: 10px;
-			  padding-bottom: 15px;
-			  border-top: 3px solid;
-			  border-bottom: 3px solid;
-			  border-color: #eee;
-			  font-size: 3em;
-			  padding-right: 10%;
-			  padding-left: 10%;
-			  color: white;
-			  margin-top: -5%;
-		}
 		#aboutusbox {
 			  background-color: rgba(128,0,0,.85);
 			  border: 3px solid;
@@ -200,7 +216,7 @@
 			  font-size: 1.5em;
 		}
 
-				/* Slide 2
+		 /* Slide 2
 		 * --------------------------------------- */
 		 #ourmissionheader {
 			  background-color: rgba(128,0,0,.85);
@@ -232,6 +248,7 @@
 		#section2{
 			background-image: url(img/38429689_xl.jpg);
 			background-size: cover;
+			z-index: 1;
 		}
 		#section2 h1{
 			color: #F2F2F2;
@@ -239,6 +256,149 @@
 		#section2 p{
 			opacity: 0.6;
 		}
+
+		/* Slide 1
+		 * --------------------------------------- */
+
+
+	    /* Slide 2
+		* --------------------------------------- */
+		#trackingbox {
+			  background-color: rgba(128,0,0,.85);
+			  border: 3px solid;
+			  border-radius: 20px;
+			  border-color: #eee;
+			  margin-top: 50px;
+			  font-size: 1em;
+			  padding-right: 5%;
+			  padding-left: 5%;
+			  width: 30%; 
+			  color: white;
+			}
+
+
+		/* Slide 3
+		* --------------------------------------- */
+
+
+		/* Login In Screen
+		 * --------------------------------------- */
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+.cancelbtn:hover,
+.cancelbtn:focus {
+    color: #f44336;
+    cursor: pointer;
+    background-color: #444;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+img.avatar {
+    width: 25%;
+    border-radius: 50%;
+}
+
+.container {
+    padding: 16px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* Login Screen */
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 30%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0); /* Black w/ opacity */
+    padding-top: 10vh;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+    
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+}
+
+/* End login screen */
 	</style>
 </head>
 <body>
@@ -259,19 +419,32 @@
     <div class="col-md-7">
       <div class= "mx-auto" style= "height: 20px; width: 100%"></div>
       <div class="btn-group btn-group-justified" style="width: 100%">
-          <a href= "#slide1"  id="topbtn1" class="btn">About us</button></a>
-         
-      
-          <a href= "#slide2"   id="topbtn2" class="btn" >Our Mission</button></a>
-  
 
-          <a href= "#bm" id="topbtn3" class="btn">Track a Shipment</button></a>
-        
+      <a href= "#section0" id="topbtn1" class="btn">Home</button></a>
+
+      	<div class="dropdown" style="width: 100%">
+          <button id="topbtn2" class="btn dropdown-toggle" type="button" data-toggle="dropdown" style="width: 100%;">About Us<span class="caret"></span></button>
+          <ul class="dropdown-menu" style="width: 100%;"">
+          	<li class="text-center dlist"><a href="#slide1" class="dlistw">About Us</a></li>
+          	<li class="text-center dlist"><a href="#slide2" class="dlistw">Our Mission</a></li>
+          </ul>
+          	</div>
+          
        
      
-          <a href= "#bc" id="topbtn4" class="btn">Contact us</button></a>
+          <div class="dropdown" style="width: 100%">
+          <button id="topbtn3" class="btn dropdown-toggle" type="button" data-toggle="dropdown" style="width: 100%;">Contact Us<span class="caret"></span></button>
+          <ul class="dropdown-menu" style="width: 100%;"">
+          	<li class="text-center dlist"><a href="#slide3" class="dlistw">Get a Quote</a></li>
+          	<li class="text-center dlist"><a href="#slide4" class="dlistw">Track a Shipment</a></li>
+          	<li class="text-center dlist"><a href="#slide5" class="dlistw">Contact Us</a></li>
+          </ul>
+          	</div>
 
-          <a href= "#" id="topbtn5" class="btn btn-success">Login</button></a>
+
+
+
+          <button id="topbtn5" class="btn btn-success" onclick="document.getElementById('id01').style.display='block'">Login</button>
       </div>
     </div>
 
@@ -281,18 +454,21 @@
 
 
 <div id="fullpage">
+
+<!-- Section 0 -->
 	<div class="section " id="section0">
 		<div class="content">
 			<h1>RCL Express LLC</h1>
 			<p>Javascript only version</p>
 		</div>
 	</div>
+
+	<!-- Section 1 -->
 	<div class="section" id="section1">
 		<div class="slide" id="slide1">
 			<div class="content">
 			 
-			    <div class="text-center" id="aboutusheader"><h2 style="color: white;">About US</h2>
-			    </div>
+			  
 			    <div class="row">
 			      <div class="col-md-1">
 			      </div>
@@ -309,8 +485,6 @@
 		</div>
 		<div class="slide" id="slide2">
 			<div class="content">
-					<div class="text-center" id="ourmissionheader"><h2 style="color: white;">Our Mission, Our Promise</h2>
-				    </div>
 				    <div class="row">
 				      <div class="col-md-1">
 				      </div>
@@ -331,13 +505,142 @@
 			</div>
 		</div>
 	</div>
+
+
+<!-- Section 2 -->
+
+<!-- Slide 1 -->
 	<div class="section" id="section2">
-		<div class="content">
-			<h1>Compatible</h1>
-			<p>IE 8+ support.</p>
+		<div class="slide" id="slide3">
+			<div class="content">
+				<h1>More slides!</h1>
+			</div>
+		</div>
+
+		<!-- Slide 2 -->
+		<div class="slide" id="slide4">
+			<div class="content">
+				          <!-- --------------- Tracking Box ---------------------------- -->
+
+          <div class="mx-auto" id="trackingbox">
+          <div>
+            <h5 class="mx-auto text-center" style="margin-top: 20px; color: white;"><b>Tracking</b></h5>
+
+
+
+
+            </div>
+            <!-- ------------ the rest of the tracking part /emails etc. ----------------- -->
+
+            <div class="mx-auto text-center" style="margin-top: 35px">
+            <h6 class="mx-auto text-center" style="color: white;">Please enter the following information</h6>
+
+
+
+
+            <!-- -------- FORM ------- --> 
+
+
+            <form method="post" action="https://formspree.io/dispatch@rl-exp.com" autocomplete="on"> <!-- Sends form to formspree.io which then sends it to operations@rl-exp.com -->
+
+            <div style="margin-top: 10px">
+            <small class="text-center">Company Name</small>
+            <div>
+            <input type="text" name="Company Name:" placeholder="Required*" required>
+            </div>
+            </div>           
+            <div class="mx-auto" style="margin-top: 20px">
+            <small class="text-center" >RCL Pro Number</small>
+            <div>
+            <input type="text" name="RCL Pro #:" placeholder="Required*" required>
+            </div>
+            </div>
+            <div style="margin-top: 10px">
+            <small class="text-center">Your Refrence Number</small>
+            <div>
+            <input type="text" name="Their Refrence #:" placeholder="Required*" required>
+            </div>
+            </div>
+            <div style="margin-top: 10px">
+            <small class="text-center">Your e-mail</small>
+            <div>
+            <input type="email" class="mx-auto" style="width: 100%" name="Email:" placeholder="Required*" required>
+            </div>
+            </div>
+            <div style="margin-top: 10px">
+            <small class="text-center">Additional Message/Questions</small>
+            <div>
+            <textarea class="mx-auto" style="width: 100%" name="Questions or Comments:"></textarea>
+            </div>
+            </div>
+
+            <!-- Hidden inputs for subject and honeypot -->
+           
+            <input type="hidden" name="_subject" value="!!!WEBSITE TRACKING UPDATE!!!">
+            <input type="text" name="_gotcha" style="display: none;">
+
+            <!-- End hidden inputs -->
+
+
+            <div class="mx-auto" style="margin-top: 25px; margin-bottom: 25px;">
+              <button type="submit" onclick="Your request has been submited" name=" Submit" value="Track" style="border-radius: 5px">Track</button>
+            </div>
+            </form>
+              
+            </div>
+          
+          </div>
+
+ 
+
+
+
+<!-- End -->
+			</div>
+		</div>
+
+		<!-- Slide 3 -->
+		<div class="slide" id="slide5">
+			<div class="content">
+				<h1>Even Even More slides!</h1>
+			</div>
 		</div>
 	</div>
 </div>
+<!-- Start login form -->
+
+<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+
+<div id="id01" class="modal mx-auto">
+  
+  <form class="modal-content animate" action="login.html">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="img/default-user.jpg" alt="Avatar" class="avatar" >
+    </div>
+
+    <div class="container">
+      <label><b style="color: #444">Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label><b style="color: #444">Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+        
+      <button type="submit" disabled style="color: #444">Login</button>
+      <input type="checkbox" checked="checked"><i style="color: #444">Remember me</i>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw" style="color: #444">Forgot <a href="#" style="pointer-events: none;">password?</a></span>
+    </div>
+  </form>
+</div>
+<!-- End login Form -->
+
+
+
+
 
 <script type="text/javascript" src="javascript.fullPage.js"></script>
 <script type="text/javascript">
